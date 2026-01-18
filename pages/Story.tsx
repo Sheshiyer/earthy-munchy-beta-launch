@@ -40,7 +40,7 @@ const Story: React.FC = () => {
             </div>
             <div className="relative">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
-                    <img src="https://picsum.photos/seed/farm/800/1000" alt="Farm Visit" className="w-full h-full object-cover" />
+                    <img src="/img/newproductshots/story-harvest-hands.png" alt="Farm Visit" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-10 -left-10 bg-brand-cream p-8 rounded-xl shadow-lg max-w-xs -rotate-2">
                     <p className="font-serif italic text-brand-dark text-lg">"The soil in Ratnapura smells like nothing else on earth."</p>

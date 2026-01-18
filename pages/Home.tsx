@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, ShieldCheck, Globe } from 'lucide-react';
-import { products } from '../data';
+import { products, honeyVarieties } from '../data';
 
 const Home: React.FC = () => {
   const featuredSpices = products.filter(p => p.category === 'spice').slice(0, 3);
@@ -11,12 +11,45 @@ const Home: React.FC = () => {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <header className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://picsum.photos/seed/earthyhero/1920/1080" 
-            alt="Spices Hero" 
-            className="w-full h-full object-cover opacity-90"
-          />
+        <div className="absolute inset-0 z-0 bg-brand-cream">
+          {/* Desktop Video */}
+          <video
+            className="hidden md:block w-full h-full object-cover opacity-90"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/img/newproductshots/story-hero-terroir.png"
+            aria-label="Atmospheric mist rolling over lush spice gardens"
+          >
+            <source src="/img/newproductshots/hero-mist-desktop.mp4" type="video/mp4" />
+            <img 
+              src="/img/newproductshots/story-hero-terroir.png" 
+              alt="Spices Hero Fallback" 
+              className="w-full h-full object-cover opacity-90"
+            />
+          </video>
+
+          {/* Mobile Video */}
+          <video
+            className="block md:hidden w-full h-full object-cover opacity-90"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/img/newproductshots/story-hero-terroir.png"
+            aria-label="Atmospheric mist rolling over lush spice gardens"
+          >
+            <source src="/img/newproductshots/hero-mist-mobile.mp4" type="video/mp4" />
+            <img 
+              src="/img/newproductshots/story-hero-terroir.png" 
+              alt="Spices Hero Fallback" 
+              className="w-full h-full object-cover opacity-90"
+            />
+          </video>
+
           <div className="absolute inset-0 bg-gradient-to-r from-brand-cream/90 via-brand-cream/60 to-transparent" />
         </div>
 
@@ -136,10 +169,14 @@ const Home: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
                 <div className="absolute -top-10 -left-10 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl"></div>
-                <img 
-                    src={honeyVault?.image} 
-                    alt="Honey Vault" 
-                    className="relative z-10 w-full rounded-2xl shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500"
+                <video 
+                  src="/img/newproductshots/honey-video-primary.mp4" 
+                  poster="/img/newproductshots/texture-honey-drop.png"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full max-w-md mx-auto relative z-10 drop-shadow-2xl rounded-2xl"
                 />
             </div>
             <div className="order-1 lg:order-2">
@@ -151,22 +188,12 @@ const Home: React.FC = () => {
                     Thousands of wild blossoms across India—each kissed by the sun. Earthy Munchy partners with ethical beekeepers to craft pure, unblended honey from diverse floral landscapes.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-10">
-                    <div className="bg-brand-cream/50 p-4 rounded-lg">
-                        <span className="block text-brand-dark font-serif font-bold mb-1">Tulsi</span>
-                        <span className="text-xs text-neutral-500">Herbal & Calming</span>
-                    </div>
-                    <div className="bg-brand-cream/50 p-4 rounded-lg">
-                        <span className="block text-brand-dark font-serif font-bold mb-1">Lychee</span>
-                        <span className="text-xs text-neutral-500">Fruity & Floral</span>
-                    </div>
-                    <div className="bg-brand-cream/50 p-4 rounded-lg">
-                        <span className="block text-brand-dark font-serif font-bold mb-1">Moringa</span>
-                        <span className="text-xs text-neutral-500">Nutty & Smooth</span>
-                    </div>
-                    <div className="bg-brand-cream/50 p-4 rounded-lg">
-                        <span className="block text-brand-dark font-serif font-bold mb-1">Sundarban</span>
-                        <span className="text-xs text-neutral-500">Exotic & Saline</span>
-                    </div>
+                    {honeyVarieties.map((honey, index) => (
+                      <div key={index} className="bg-brand-cream/50 p-4 rounded-lg">
+                          <span className="block text-brand-dark font-serif font-bold mb-1">{honey.name.replace(' Honey', '')}</span>
+                          <span className="text-xs text-neutral-500">{honey.desc.split(',')[0]}</span>
+                      </div>
+                    ))}
                 </div>
                 <Link to={`/product/${honeyVault?.id}`} className="inline-block px-8 py-3 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-moss transition-colors">
                     Explore The Vault

@@ -35,8 +35,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Logo */}
           <Link to="/" className="flex flex-col items-center lg:items-start group" onClick={closeMobileMenu}>
-            <span className="text-xl lg:text-2xl font-serif font-bold tracking-tighter text-brand-dark group-hover:text-brand-moss transition-colors">
-              EARTHY MUNCHY
+            <span className="text-xl lg:text-2xl font-bold tracking-tighter text-brand-dark group-hover:text-brand-moss transition-colors">
+              <span className="font-earthy">Earthy</span> <span className="font-munchy">Munchy</span>
             </span>
           </Link>
 
@@ -106,12 +106,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
-              <h4 className="font-serif text-lg mb-6">Earthy Munchy</h4>
+              <h4 className="text-lg mb-6">
+                <span className="font-earthy font-bold">Earthy</span> <span className="font-munchy font-bold">Munchy</span>
+              </h4>
               <p className="text-brand-cream/60 text-sm leading-relaxed mb-6">
                 From native roots to global hearts. Curating the finest authentic ingredients from their origins.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-white/60 hover:text-white transition-colors"><Instagram size={18} /></a>
+                <a href="https://www.instagram.com/earthy.munchy" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors"><Instagram size={18} /></a>
                 <a href="#" className="text-white/60 hover:text-white transition-colors"><Facebook size={18} /></a>
                 <a href="#" className="text-white/60 hover:text-white transition-colors"><Twitter size={18} /></a>
               </div>

@@ -12,6 +12,7 @@ export interface Product {
   features: string[];
   nutrition?: Record<string, string | number>;
   image: string;
+  images?: string[];
   tags: string[];
 }
 

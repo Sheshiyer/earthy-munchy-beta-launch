@@ -12,7 +12,11 @@ export const products: Product[] = [
     grade: 'C5',
     features: ['Ultra-thin quills', 'Low coumarin', 'Sweet aroma', 'Hand-picked'],
     tags: ['Best Seller', 'Premium'],
-    image: 'https://picsum.photos/seed/cinnamon1/800/800',
+    image: '/img/newproductshots/cinnamon-c5-ps1.JPG',
+    images: [
+        '/img/newproductshots/cinnamon-c5-ps1.JPG',
+        '/img/newproductshots/cinammon-sticks-c5-ps3.JPG'
+    ],
     nutrition: {
         'Calories': '6.4 kcal',
         'Dietary Fiber': '1.4g',
@@ -31,7 +35,11 @@ export const products: Product[] = [
     grade: 'H2',
     features: ['Versatile', 'Robust flavor', 'Everyday cooking', 'Value'],
     tags: ['Everyday'],
-    image: 'https://picsum.photos/seed/cinnamon2/800/800'
+    image: '/img/newproductshots/cinnamon-h2-ps1.PNG',
+    images: [
+        '/img/newproductshots/cinnamon-h2-ps1.PNG',
+        '/img/newproductshots/cinnamon-h2-ps2.PNG'
+    ]
   },
   {
     id: 'cinnamon-powder',
@@ -44,7 +52,7 @@ export const products: Product[] = [
     grade: 'C5 Powder',
     features: ['High Antioxidants', 'Finely Milled', 'True Cinnamon', 'Wellness'],
     tags: ['Wellness'],
-    image: 'https://picsum.photos/seed/powder/800/800'
+    image: '/img/newproductshots/cinnammon-powder-ps1.PNG'
   },
   {
     id: 'cloves-g1',
@@ -57,7 +65,13 @@ export const products: Product[] = [
     grade: 'Grade 1',
     features: ['Hand-picked', 'Bold aroma', 'High oil content', 'Premium'],
     tags: ['Premium'],
-    image: 'https://picsum.photos/seed/cloves1/800/800',
+    image: '/img/newproductshots/cloves-cg2-ps2.PNG',
+    images: [
+        '/img/newproductshots/cloves-cg2-ps2.PNG',
+        '/img/newproductshots/cloves-cg2-ps1.PNG',
+        '/img/newproductshots/cloves-cg2-ps3.PNG',
+        '/img/newproductshots/cloves-cg2-ps4.JPG'
+    ],
     nutrition: {
         'Calories': 214,
         'Vitamin C': '45% DV',
@@ -75,7 +89,12 @@ export const products: Product[] = [
     grade: 'CG2',
     features: ['Warm aroma', 'Balanced flavor', 'Value'],
     tags: ['Value'],
-    image: 'https://picsum.photos/seed/cloves2/800/800'
+    image: '/img/newproductshots/cloves-cg2-ps1.PNG',
+    images: [
+        '/img/newproductshots/cloves-cg2-ps1.PNG',
+        '/img/newproductshots/cloves-cg2-ps2.PNG',
+        '/img/newproductshots/cloves-cg2-ps3.PNG'
+    ]
   },
   {
     id: 'honey-vault',
@@ -87,10 +106,36 @@ export const products: Product[] = [
     category: 'set',
     features: ['6 Varieties', 'Single Origin', 'Raw & Unfiltered', 'Gift Box'],
     tags: ['Gift Set', 'Exclusive'],
-    image: 'https://picsum.photos/seed/honey/800/800',
+    image: '/img/newproductshots/honeyvault-ps1.png',
+    images: [
+        '/img/newproductshots/honeyvault-ps1.png',
+        '/img/newproductshots/honeyvault-ps2.png'
+    ],
     nutrition: {
         'Calories': '64',
         'Sugars': '16g',
+        'Protein': '0g'
+    }
+  },
+  {
+    id: 'wildflower-honey',
+    name: 'Single Wildflower Honey',
+    subtitle: 'Pure Sundarban Wild Flora',
+    description: 'Exotic, saline-sweet nectar harvested from the wild mangroves of the Sundarbans. Pure, unheated, and unblended, capturing the essence of the wild.',
+    price: 349,
+    weight: '250g',
+    category: 'honey',
+    grade: 'Raw & Unfiltered',
+    features: ['Wild Harvested', 'Mangrove Flora', 'Raw', 'Unfiltered'],
+    tags: ['New', 'Single Origin'],
+    image: '/img/newproductshots/wildflower-honey-ps1.png',
+    images: [
+        '/img/newproductshots/wildflower-honey-ps1.png',
+        '/img/newproductshots/wildflower-honey-ps2.png'
+    ],
+    nutrition: {
+        'Calories': '64',
+        'Sugars': '17g',
         'Protein': '0g'
     }
   }

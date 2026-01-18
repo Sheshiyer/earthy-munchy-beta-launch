@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { products, honeyVarieties } from '../data';
 import { ArrowLeft, Check, ShoppingBag, Truck, ShieldCheck, Facebook, Twitter } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import ImageCarousel from '../components/ImageCarousel';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -56,9 +58,12 @@ const ProductDetail: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Image Gallery */}
             <div className="space-y-4">
-                <div className="aspect-[4/5] bg-neutral-100 rounded-2xl overflow-hidden shadow-inner">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
-                </div>
+                <ErrorBoundary>
+                    <ImageCarousel 
+                        images={product.images || [product.image]} 
+                        alt={product.name} 
+                    />
+                </ErrorBoundary>
             </div>
 
             {/* Details */}
