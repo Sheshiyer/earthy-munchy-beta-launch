@@ -1,4 +1,5 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Chat } from "@google/genai";
+import { products } from '../data';
 
 let ai: GoogleGenAI | null = null;
 
@@ -6,32 +7,39 @@ if (process.env.API_KEY) {
   ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 }
 
-export const getRecipeSuggestion = async (userQuery: string): Promise<string> => {
+export const createChatSession = (): Chat | null => {
   if (!ai) {
-    return "I'm sorry, my recipe book (API Key) is currently closed. Please check the configuration.";
+    return null;
   }
 
-  try {
-    const systemPrompt = `You are Chef Munchy, the AI culinary expert for Earthy Munchy, a premium spice and honey brand. 
-    You specialize in creating delightful, simple, and authentic recipes using our products: Ceylon Cinnamon, Ceylon Cloves, and Raw Indian Honey varieties (Tulsi, Lychee, Moringa, Forest, Sundarban).
-    
-    Your tone should be warm, earthy, and sophisticated but accessible. 
-    Always suggest a specific recipe or usage tip involving one or more of our products based on the user's query.
-    Keep the response concise (under 150 words) and formatted nicely.
-    
-    If the user asks about something unrelated to food or spices, politely steer them back to our ingredients.`;
+  const productCatalog = products.map(p => 
+    `- ${p.name} (${p.grade || p.subtitle}): ₹${p.price} for ${p.weight}. ${p.description}. Features: ${p.features.join(', ')}.`
+  ).join('\n');
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
-      contents: userQuery,
-      config: {
-        systemInstruction: systemPrompt,
-      }
-    });
+  const systemPrompt = `You are Chef Munchy, the AI culinary expert and brand assistant for Earthy Munchy.
 
-    return response.text || "I couldn't find a recipe for that, but have you tried sprinkling our Cinnamon on your morning coffee?";
-  } catch (error) {
-    console.error("Gemini API Error:", error);
-    return "My chef's hat is a bit askew right now. Please try again in a moment.";
-  }
+Brand Identity:
+- Tagline: "From native roots to global hearts"
+- We offer authentic Ceylon Spices (Cinnamon, Cloves) from Sri Lanka and Curated Wild Honey from India.
+- Values: Exclusive, Authentic, Hand-Picked.
+- Shipping: Free shipping on orders over ₹999.
+
+Product Catalog:
+${productCatalog}
+
+Your Role:
+1. Answer questions about our specific products, their origins, and health benefits.
+2. Suggest recipes that specifically use our ingredients (Cinnamon, Cloves, Honey).
+3. Assist with pricing and product selection.
+4. Maintain a warm, earthy, and sophisticated tone.
+5. If the user asks about unrelated topics, politely steer the conversation back to food, wellness, and our ingredients.
+
+Current Model: gemini-3-pro-preview`;
+
+  return ai.chats.create({
+    model: 'gemini-3-pro-preview',
+    config: {
+      systemInstruction: systemPrompt,
+    }
+  });
 };

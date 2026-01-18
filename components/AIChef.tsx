@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles, ChefHat } from 'lucide-react';
-import { getRecipeSuggestion } from '../services/gemini';
+import { createChatSession } from '../services/gemini';
 import { ChatMessage } from '../types';
+import { Chat } from "@google/genai";
 
 interface AIChefProps {
   isOpen: boolean;
@@ -10,11 +11,22 @@ interface AIChefProps {
 
 const AIChef: React.FC<AIChefProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: "Hello! I'm Chef Munchy. Ask me for a recipe using our premium spices or honey!" }
+    { role: 'model', text: "Hello! I'm Chef Munchy. Ask me about our authentic Ceylon spices, wild honey, or for a delicious recipe!" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const chatSessionRef = useRef<Chat | null>(null);
+
+  useEffect(() => {
+    // Initialize chat session on mount
+    if (!chatSessionRef.current) {
+      const session = createChatSession();
+      if (session) {
+        chatSessionRef.current = session;
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -30,10 +42,20 @@ const AIChef: React.FC<AIChefProps> = ({ isOpen, onClose }) => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    const response = await getRecipeSuggestion(userMsg);
-
-    setMessages(prev => [...prev, { role: 'model', text: response }]);
-    setIsLoading(false);
+    try {
+      if (chatSessionRef.current) {
+        const response = await chatSessionRef.current.sendMessage({ message: userMsg });
+        const text = response.text || "I'm pondering that flavor combination...";
+        setMessages(prev => [...prev, { role: 'model', text: text }]);
+      } else {
+        setMessages(prev => [...prev, { role: 'model', text: "I'm currently offline (API Key missing). Please check your configuration." }]);
+      }
+    } catch (error) {
+      console.error("Chat Error:", error);
+      setMessages(prev => [...prev, { role: 'model', text: "My chef's hat is a bit askew. I couldn't process that request right now." }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -53,7 +75,7 @@ const AIChef: React.FC<AIChefProps> = ({ isOpen, onClose }) => {
             </div>
             <div>
               <h3 className="font-serif font-bold text-lg">Chef Munchy AI</h3>
-              <p className="text-xs opacity-80">Culinary Expert</p>
+              <p className="text-xs opacity-80">Culinary & Product Expert</p>
             </div>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-full transition-colors">
@@ -101,7 +123,7 @@ const AIChef: React.FC<AIChefProps> = ({ isOpen, onClose }) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Suggest a recipe for honey..."
+              placeholder="Ask about spices or recipes..."
               className="flex-1 bg-neutral-100 border-none rounded-full px-4 py-3 text-sm focus:ring-2 focus:ring-brand-moss/20 outline-none"
             />
             <button 

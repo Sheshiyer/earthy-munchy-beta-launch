@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ShoppingBag, Sparkles, X, Instagram, Facebook, Twitter, Phone, Mail } from 'lucide-react';
 import AIChef from './AIChef';
+import CartDrawer from './CartDrawer';
+import { useCart } from '../context/CartContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +12,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAIChefOpen, setIsAIChefOpen] = useState(false);
+  const { cartCount, setIsCartOpen } = useCart();
   const location = useLocation();
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -54,9 +57,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Sparkles size={14} />
               AI Chef
             </button>
-            <button className="relative p-2 text-brand-dark hover:bg-neutral-100 rounded-full transition-colors">
+            <button 
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-brand-dark hover:bg-neutral-100 rounded-full transition-colors"
+            >
               <ShoppingBag size={20} />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-brand-copper rounded-full ring-2 ring-white"></span>
+              {cartCount > 0 && (
+                <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-copper text-[10px] font-bold text-white ring-2 ring-white">
+                  {cartCount}
+                </span>
+              )}
             </button>
           </div>
         </div>
@@ -89,6 +99,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
 
       <AIChef isOpen={isAIChefOpen} onClose={() => setIsAIChefOpen(false)} />
+      <CartDrawer />
 
       {/* Footer */}
       <footer className="bg-brand-dark text-white pt-20 pb-10">

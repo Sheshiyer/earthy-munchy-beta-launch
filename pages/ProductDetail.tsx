@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products, honeyVarieties } from '../data';
 import { ArrowLeft, Check, ShoppingBag, Truck, ShieldCheck, Facebook, Twitter } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'description' | 'nutrition'>('description');
+  const { addToCart } = useCart();
 
   if (!product) {
     return (
@@ -38,6 +40,10 @@ const ProductDetail: React.FC = () => {
             break;
     }
     window.open(url, '_blank', 'width=600,height=400');
+  };
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
   };
 
   return (
@@ -91,7 +97,10 @@ const ProductDetail: React.FC = () => {
                                 className="px-4 py-2 text-neutral-500 hover:text-brand-dark"
                             >+</button>
                         </div>
-                        <button className="flex-1 bg-brand-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-moss transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-dark/20">
+                        <button 
+                            onClick={handleAddToCart}
+                            className="flex-1 bg-brand-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-moss transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-dark/20"
+                        >
                             <ShoppingBag size={18} /> Add to Cart - ₹{product.price * quantity}
                         </button>
                     </div>
@@ -110,21 +119,21 @@ const ProductDetail: React.FC = () => {
                         <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Share:</span>
                         <button 
                             onClick={() => handleShare('facebook')}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 text-neutral-600 hover:bg-[#1877F2] hover:text-white transition-all"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-50 text-neutral-600 hover:bg-brand-moss hover:text-white transition-all duration-300"
                             aria-label="Share on Facebook"
                         >
-                            <Facebook size={16} />
+                            <Facebook size={18} />
                         </button>
                         <button 
                             onClick={() => handleShare('twitter')}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 text-neutral-600 hover:bg-[#1DA1F2] hover:text-white transition-all"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-50 text-neutral-600 hover:bg-brand-moss hover:text-white transition-all duration-300"
                             aria-label="Share on Twitter"
                         >
-                            <Twitter size={16} />
+                            <Twitter size={18} />
                         </button>
                         <button 
                             onClick={() => handleShare('pinterest')}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 text-neutral-600 hover:bg-[#BD081C] hover:text-white transition-all"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-50 text-neutral-600 hover:bg-brand-moss hover:text-white transition-all duration-300"
                             aria-label="Share on Pinterest"
                         >
                             <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
