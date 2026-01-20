@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const Story: React.FC = () => {
   return (
     <div className="animate-fade-in bg-white min-h-screen">
+      <SEO 
+        title="Our Story - Roots, Soil, and a Promise | Earthy Munchy"
+        description="Learn about our journey to source the finest ingredients. From the hill country of Sri Lanka to the forests of India, we preserve traditions and support farmers."
+        canonical="https://earthymunchy.com/#/story"
+      />
       <div className="relative py-24 bg-brand-cream/40">
         <div className="max-w-4xl mx-auto px-6 text-center">
             <span className="text-xs font-bold text-brand-moss uppercase tracking-widest">Our Story</span>

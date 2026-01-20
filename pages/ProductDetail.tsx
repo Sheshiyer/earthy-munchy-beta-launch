@@ -5,6 +5,8 @@ import { ArrowLeft, Check, ShoppingBag, Truck, ShieldCheck, Facebook, Twitter } 
 import { useCart } from '../context/CartContext';
 import ImageCarousel from '../components/ImageCarousel';
 import ErrorBoundary from '../components/ErrorBoundary';
+import SEO from '../components/SEO';
+import { generateProductSchema, generateBreadcrumbSchema, getAITags } from '../utils/ai-seo';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -21,6 +23,15 @@ const ProductDetail: React.FC = () => {
         </div>
     );
   }
+
+  // Generate Schemas
+  const productSchema = generateProductSchema(product);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Shop', item: '/shop' },
+    { name: product.name, item: `/product/${product.id}` }
+  ]);
+  const aiTags = getAITags(product.name, product.description, product.category);
 
   const isHoneyVault = product.id === 'honey-vault';
 
@@ -50,14 +61,24 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white animate-fade-in pb-20">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <SEO 
+        title={`${product.name} | Earthy Munchy`}
+        description={product.description}
+        image={product.image}
+        imageAlt={product.name}
+        type="product"
+        canonical={`https://earthymunchy.com/#/product/${product.id}`}
+        schema={[productSchema, breadcrumbSchema]}
+        aiTags={aiTags}
+      />
+      <div className="max-w-7xl mx-auto px-6 py-10" data-ai-context="product_detail" data-ai-topic={product.category}>
         <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-brand-dark mb-8 transition-colors">
             <ArrowLeft size={16} /> Back to Shop
         </Link>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Image Gallery */}
-            <div className="space-y-4">
+            <div className="space-y-4" data-ai-context="product_images">
                 <ErrorBoundary>
                     <ImageCarousel 
                         images={product.images || [product.image]} 
@@ -67,7 +88,7 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Details */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full" data-ai-context="product_info">
                 <div className="mb-8">
                     <span className="text-xs font-bold text-brand-moss uppercase tracking-widest bg-brand-moss/10 px-2 py-1 rounded">
                         {product.grade || (isHoneyVault ? 'Collection' : 'Premium')}

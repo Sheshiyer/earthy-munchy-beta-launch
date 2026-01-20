@@ -60,6 +60,14 @@ Earthy Munchy Beta Launch project.
 - **Verification**: Verified via `grep` that no `picsum` references remain in the key files.
 - **Logic**: Ensured correct mapping of products to their specific grade/type images (e.g., C5 vs H2 cinnamon).
 
+### [2026-01-20] Task Completed: Analyze and Update SEO Documentation
+- **Outcome**: Converted `seo-agent.md` from an XML prompt into a structured Markdown task documentation file.
+- **Details**:
+  - Parsed original XML "Phases" into a clear "Task Roadmap".
+  - Categorized all tasks as "Pending" based on the absence of an `artifacts/` directory.
+  - Added version control info (v2.0) and status indicators.
+- **Next Steps**: Begin execution of Phase 1 (Kickoff & Setup) as defined in the new roadmap.
+
 ## Key Breakthroughs
 
 ## Error Patterns & Solutions
@@ -67,3 +75,39 @@ Earthy Munchy Beta Launch project.
 
 ## Architecture Decisions
 - **Static Assets**: Moved to `public/` to ensure they are correctly served by Vite and accessible via absolute paths (e.g., `/fonts/...`).
+
+### [2026-01-20] Task Completed: SEO Foundation & Content Expansion
+- **Outcome**: Established technical SEO infrastructure and launched initial content strategy.
+- **Code Changes**:
+  - **Dependencies**: Installed `react-helmet-async`.
+  - **Components**: Created `SEO.tsx` for dynamic meta tags. Integrated into all pages.
+  - **Pages**: Created `Legal` pages (Privacy, Terms, Returns) and `Blog` architecture (`Blog.tsx`, `BlogPost.tsx`).
+  - **Data**: Expanded `data.ts` with 6 SEO-optimized articles (1 initial + 5 new).
+  - **Docs**: Created `docs/seo-implementation-plan.md`.
+- **Content**:
+  - "5 Benefits of Naturally Sourced Ingredients"
+  - "Ceylon Cinnamon vs. Cassia: The Truth About Your Spice Cabinet"
+  - "Raw vs. Commercial Honey: Why Clarity Isn't Always Quality"
+  - "The Secret Power of Ceylon Cloves"
+  - "Decoding Spice Grades: C5, H2, G1"
+  - "Saving the Mangroves, One Jar at a Time"
+- **Breakthrough**: Used PAA (People Also Ask) sections in articles to target specific search intent and improve rich snippet eligibility.
+
+### [2026-01-20] Task Completed: Technical SEO Files
+- **Outcome**: Generated `robots.txt` and `sitemap.xml` for crawler guidance.
+- **Details**:
+  - **robots.txt**: Configured to allow all user-agents to crawl the site and pointed to the sitemap.
+  - **sitemap.xml**: Static XML generation listing all static routes and dynamic product/blog routes.
+- **Code Changes**: Created files in `public/` directory.
+
+### [2026-01-20] Bug Fix: Image Paths
+- **Outcome**: Fixed broken image link in "Raw vs. Commercial Honey" article.
+- **Error**: `honey-hero-amber.png` was referenced but missing from `public/img/newproductshots/`.
+- **Fix**: Replaced with `wildflower-honey-ps1.png`.
+
+### [2026-01-20] Task Completed: SEO Phase 2 (Inventory)
+- **Outcome**: Created `docs/seo-inventory.md` documenting current SEO status.
+- **Details**:
+  - Mapped all static and dynamic routes.
+  - Verified 100% meta tag coverage via `SEO.tsx`.
+  - Documented codebase structure for future reference.

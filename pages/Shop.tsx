@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { products } from '../data';
 import { Category } from '../types';
 import { Filter } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Shop: React.FC = () => {
   const [filter, setFilter] = useState<Category | 'all'>('all');
@@ -13,6 +14,11 @@ const Shop: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white pb-20 animate-fade-in">
+        <SEO 
+            title="Shop Premium Spices & Wild Honey | Earthy Munchy"
+            description="Browse our curated collection of authentic Ceylon Cinnamon, wild-harvested honey, and premium spices sourced directly from sustainable farms."
+            canonical="https://earthymunchy.com/#/shop"
+        />
         <div className="bg-brand-cream/30 py-16 mb-12">
             <div className="max-w-7xl mx-auto px-6">
                 <h1 className="text-4xl lg:text-5xl font-serif font-medium text-brand-dark mb-4">Shop Essentials</h1>

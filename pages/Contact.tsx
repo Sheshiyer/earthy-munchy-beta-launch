@@ -1,8 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-brand-cream/30 animate-fade-in py-16">
+        <SEO 
+            title="Contact Us | Earthy Munchy"
+            description="Get in touch with Earthy Munchy. Whether for corporate gifting, wholesale partnerships, or general enquiries, we'd love to hear from you."
+            canonical="https://earthymunchy.com/#/contact"
+        />
         <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-serif font-medium text-brand-dark mb-4">Start a Conversation</h1>

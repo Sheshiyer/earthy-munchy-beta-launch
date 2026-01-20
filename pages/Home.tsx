@@ -2,13 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, ShieldCheck, Globe } from 'lucide-react';
 import { products, honeyVarieties } from '../data';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const featuredSpices = products.filter(p => p.category === 'spice').slice(0, 3);
   const honeyVault = products.find(p => p.category === 'set');
+  
+  // Optimize video loading to prevent double downloads/aborts
+  const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    
+    // Initial check
+    checkMobile();
+    
+    // Listener
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div className="animate-fade-in">
+      <SEO 
+        title="Earthy Munchy | Premium Naturally Sourced Spices & Honey"
+        description="Discover authentic Ceylon Cinnamon, wild-harvested honey, and premium spices sourced directly from farms in Sri Lanka and India."
+      />
       {/* Hero Section */}
       <header className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-brand-cream">

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Menu, ShoppingBag, Sparkles, X, Instagram, Facebook, Twitter, Phone, Mail } from 'lucide-react';
 import AIChef from './AIChef';
 import CartDrawer from './CartDrawer';
 import { useCart } from '../context/CartContext';
+import { generateOrganizationSchema } from '../utils/ai-seo';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,9 +18,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const orgSchema = generateOrganizationSchema();
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-cream">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(orgSchema)}
+        </script>
+      </Helmet>
       {/* Navigation */}
       <nav className={`fixed w-full z-40 transition-all duration-300 ${
         location.pathname === '/' ? 'bg-white/80 backdrop-blur-md' : 'bg-white shadow-sm'
@@ -45,6 +53,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Link to="/" className="text-sm font-medium text-neutral-600 hover:text-brand-moss tracking-wide transition-colors">Home</Link>
             <Link to="/shop" className="text-sm font-medium text-neutral-600 hover:text-brand-moss tracking-wide transition-colors">Shop</Link>
             <Link to="/story" className="text-sm font-medium text-neutral-600 hover:text-brand-moss tracking-wide transition-colors">Story</Link>
+            <Link to="/journal" className="text-sm font-medium text-neutral-600 hover:text-brand-moss tracking-wide transition-colors">Journal</Link>
             <Link to="/contact" className="text-sm font-medium text-neutral-600 hover:text-brand-moss tracking-wide transition-colors">Contact</Link>
           </div>
 
@@ -78,6 +87,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link to="/" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Home</Link>
               <Link to="/shop" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Shop</Link>
               <Link to="/story" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Our Story</Link>
+              <Link to="/journal" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Journal</Link>
               <Link to="/contact" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Contact</Link>
               <button 
                 onClick={() => {
@@ -94,7 +104,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-20" data-ai-context="main_content">
         {children}
       </main>
 
@@ -133,9 +143,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-brand-cream/80 mb-6">Company</h4>
               <ul className="space-y-3 text-sm text-white/60">
                 <li><Link to="/story" className="hover:text-white transition-colors">Our Story</Link></li>
+                <li><Link to="/journal" className="hover:text-white transition-colors">Journal</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+                <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link to="/returns" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
               </ul>
             </div>
 
