@@ -5,6 +5,7 @@ export interface Product {
   name: string;
   subtitle: string;
   description: string;
+  metaDescription: string;
   price: number;
   weight: string;
   category: Category;
@@ -14,6 +15,8 @@ export interface Product {
   image: string;
   images?: string[];
   tags: string[];
+  rating?: number;
+  reviewCount?: number;
 }
 
 export interface CartItem extends Product {

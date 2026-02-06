@@ -6,10 +6,11 @@ import SEO from '../components/SEO';
 const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-white pb-20 animate-fade-in">
-        <SEO 
+        <SEO
             title="Journal | Earthy Munchy"
-            description="Stories from the source. Learn about sustainable harvesting, health benefits of natural ingredients, and the people behind our products."
+            description="Ceylon Cinnamon health benefits, wild honey harvesting & natural spice guides. Expert articles on authentic ingredients from farm to table."
             canonical="https://earthymunchy.com/#/journal"
+            image="/img/og/og-journal.png"
         />
         <div className="bg-brand-cream/30 py-16 mb-12">
             <div className="max-w-7xl mx-auto px-6">

@@ -6,8 +6,9 @@ const Story: React.FC = () => {
         <div className="animate-fade-in bg-white min-h-screen">
             <SEO
                 title="Our Story - Roots, Soil, and a Promise | Earthy Munchy"
-                description="Learn about our journey to source the finest ingredients. From the hill country of Sri Lanka to the forests of India, we preserve traditions and support farmers."
+                description="From Sri Lankan highlands to Indian forests - meet the farmers behind Earthy Munchy's premium spices & wild honey. Our story of tradition & craft."
                 canonical="https://earthymunchy.com/#/story"
+                image="/img/og/og-story.png"
             />
             <div className="relative py-24 bg-brand-cream/40">
                 <div className="max-w-4xl mx-auto px-6 text-center">
@@ -29,7 +30,7 @@ const Story: React.FC = () => {
                             It started with a simple question: Where does my food actually come from? I spent six months traveling through the hill country of Sri Lanka and the forests of India. Not staying in hotels, but in the homes of farmers.
                         </p>
                         <p>
-                            I learned that real cinnamon isn't just bark—it's a craft perfected over centuries by families initiated into the art. I saw how wild honey is harvested in the Sundarbans, a dangerous yet sacred tradition.
+                            I learned that real cinnamon isn't just bark—it's a craft perfected over centuries by families initiated into the art. I saw how Wild Floral Honey is harvested, a dangerous yet sacred tradition.
                         </p>
                         <p>
                             Earthy Munchy isn't a corporation. It's a bridge. A direct line from the hands that harvest to the hands that cook.
@@ -65,7 +66,7 @@ const Story: React.FC = () => {
                         </div>
                         <div className="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
                             <h3 className="text-xl font-bold mb-4 text-brand-yellow">India</h3>
-                            <p className="text-white/70">The Wild Honey Forests. From the Sundarbans to the lush Western Ghats. We work with tribal foragers who harvest wild honey ethically.</p>
+                            <p className="text-white/70">The Wild Honey Forests. From wild floral regions to the lush Western Ghats. We work with tribal foragers who harvest wild honey ethically.</p>
                         </div>
                     </div>
                 </div>

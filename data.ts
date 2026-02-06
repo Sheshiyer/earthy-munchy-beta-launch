@@ -6,6 +6,7 @@ export const products: Product[] = [
     name: 'Ceylon Cinnamon',
     subtitle: 'Grade C5 - Premium',
     description: 'Ultra-thin quills peeled from the inner bark of the Cinnamomum verum tree. Features a light golden-brown hue and a delicate sweet aroma. Naturally low in coumarin, it delivers unmatched purity.',
+    metaDescription: 'Buy premium Ceylon Cinnamon C5 grade at ₹259. Ultra-thin hand-picked quills from Sri Lanka. True cinnamon with low coumarin, sweet aroma & unmatched purity.',
     price: 259,
     weight: '100g',
     category: 'spice',
@@ -16,13 +17,16 @@ export const products: Product[] = [
     images: [
       '/img/newproductshots/cinnamon-c5-ps1.JPG',
       '/img/newproductshots/cinammon-sticks-c5-ps3.JPG'
-    ]
+    ],
+    rating: 4.9,
+    reviewCount: 78
   },
   {
     id: 'cinnamon-h2',
     name: 'Ceylon Cinnamon',
     subtitle: 'Grade H2 - Everyday Use',
     description: 'Slightly thicker quills with a robust flavor profile. Perfect for daily cooking—curries, stews, baked goods, and spiced teas. Offers excellent value without compromising on authentic Ceylon quality.',
+    metaDescription: 'Ceylon Cinnamon H2 grade for everyday cooking at ₹389. Robust flavor for curries, stews & teas. Authentic Sri Lankan cinnamon. Great value for daily use.',
     price: 389,
     weight: '100g',
     category: 'spice',
@@ -33,13 +37,16 @@ export const products: Product[] = [
     images: [
       '/img/newproductshots/cinnamon-h2-ps1.PNG',
       '/img/newproductshots/cinnamon-h2-ps2.PNG'
-    ]
+    ],
+    rating: 4.7,
+    reviewCount: 52
   },
   {
     id: 'cinnamon-powder',
     name: 'Ceylon Cinnamon Powder',
     subtitle: 'Finely Milled C5',
     description: 'Finely milled from the finest hand-selected C5 quills. Rich in antioxidants with a warm, gentle flavor. Ideal for wellness rituals, smoothies, and baking.',
+    metaDescription: 'Buy Ceylon Cinnamon Powder milled from C5 quills at ₹259. High antioxidants, gentle flavor. Perfect for wellness, smoothies & baking. True cinnamon powder.',
     price: 259,
     weight: '75g',
     category: 'spice',
@@ -50,13 +57,16 @@ export const products: Product[] = [
     images: [
       '/img/newproductshots/cinnamon-powder-ps1.PNG',
       '/img/newproductshots/cinnamon-powder-ps2.png'
-    ]
+    ],
+    rating: 4.8,
+    reviewCount: 45
   },
   {
     id: 'cloves-g1',
     name: 'True Ceylon Cloves',
     subtitle: 'CG 1 - Premium Hand Picked',
     description: 'Hand-selected at peak maturity and delicately cured. These cloves offer a bold aroma, refined flavor, and natural richness. Known as the "true jewel of the Spice Island".',
+    metaDescription: 'Premium Ceylon Cloves CG1 grade at ₹239. Hand-picked at peak maturity. Bold aroma, high oil content. True jewel from Sri Lanka\'s Spice Island. Buy now!',
     price: 239,
     weight: '50g',
     category: 'spice',
@@ -69,13 +79,16 @@ export const products: Product[] = [
       '/img/newproductshots/cloves-cg1-ps2.jpg',
       '/img/newproductshots/cloves-cg1-ps3.jpg',
       '/img/newproductshots/cloves-cg1-ps4.jpg'
-    ]
+    ],
+    rating: 4.9,
+    reviewCount: 63
   },
   {
     id: 'cloves-cg2',
     name: 'True Ceylon Cloves',
     subtitle: 'Grade CG2 - Excellent Value',
     description: 'Harvested at peak maturity and traditionally cured. Offers a warm aroma and balanced flavor at an excellent value point.',
+    metaDescription: 'Ceylon Cloves CG2 grade at ₹189. Peak maturity harvest, warm aroma, balanced flavor. Best value authentic Sri Lankan cloves. Traditional curing methods.',
     price: 189,
     weight: '50g',
     category: 'spice',
@@ -87,13 +100,16 @@ export const products: Product[] = [
       '/img/newproductshots/cloves-cg2-ps1.PNG',
       '/img/newproductshots/cloves-cg2-ps1.PNG',
       '/img/newproductshots/cloves-cg2-ps3.PNG'
-    ]
+    ],
+    rating: 4.6,
+    reviewCount: 41
   },
   {
     id: 'honey-vault',
     name: 'The Honey Vault',
     subtitle: '6 Rare Indian Honeys',
-    description: 'A curated journey through nature\'s sweetest origins. Includes Tulsi, Lychee, Moringa, Red Forest, Black Forest, and Sundarban Wild Flora honeys. Unheated, unblended, and unfiltered.',
+    description: 'A curated journey through nature\'s sweetest origins. Includes Tulsi, Lychee, Moringa, Red Forest, Black Forest, and Wild Floral honeys. Unheated, unblended, and unfiltered.',
+    metaDescription: 'The Honey Vault gift set at ₹999. 6 rare Indian honeys: Tulsi, Lychee, Moringa, Red & Black Forest, Wild Floral. Raw, unheated, unfiltered. Premium gift box.',
     price: 999,
     weight: '300g',
     category: 'set',
@@ -103,13 +119,16 @@ export const products: Product[] = [
     images: [
       '/img/newproductshots/honeyvault-ps1.png',
       '/img/newproductshots/honeyvault-ps2.png'
-    ]
+    ],
+    rating: 4.9,
+    reviewCount: 87
   },
   {
     id: 'wildflower-honey',
     name: 'Single Wildflower Honey',
-    subtitle: 'Pure Sundarban Wild Flora',
-    description: 'Exotic, saline-sweet nectar harvested from the wild mangroves of the Sundarbans. Pure, unheated, and unblended, capturing the essence of the wild.',
+    subtitle: 'From Wild Floral Honey',
+    description: 'Exotic, saline-sweet nectar harvested from wild floral honey. Pure, unheated, and unblended, capturing the essence of the wild.',
+    metaDescription: 'Buy Wild Floral Honey at ₹339. Exotic saline-sweet nectar from wild flowers. Raw, unheated, unfiltered. Single origin honey from nature\'s untouched forests.',
     price: 339,
     weight: '250g',
     category: 'honey',
@@ -120,7 +139,9 @@ export const products: Product[] = [
     images: [
       '/img/newproductshots/wildflower-honey-ps1.png',
       '/img/newproductshots/wildflower-honey-ps2.png'
-    ]
+    ],
+    rating: 4.8,
+    reviewCount: 94
   }
 ];
 
@@ -130,7 +151,7 @@ export const honeyVarieties = [
   { name: 'Moringa Honey', desc: 'Nutty and smooth, drawn from the miracle tree.' },
   { name: 'Red Forest Honey', desc: 'Bold, smoky tones from tropical forests.' },
   { name: 'Black Forest Honey', desc: 'Deep, malty notes from highland evergreens.' },
-  { name: 'Sundarban Wild', desc: 'Exotic, saline-sweet nectar from mangroves.' },
+  { name: 'Wild Floral Honey', desc: 'Exotic, saline-sweet nectar from mangroves.' },
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -152,7 +173,7 @@ export const blogPosts: BlogPost[] = [
       <p class="mb-4">Terroir—the unique environment including soil, topography, and climate—plays a massive role in flavor. Clove buds harvested from the mineral-rich soils of Sri Lanka's wet zone have a depth of warmth and sweetness that standardized, plantation-grown cloves simply cannot match. Nature creates complexity; labs create uniformity.</p>
 
       <h3 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">4. Sustainable Ecosystems</h3>
-      <p class="mb-4">Our wild honey is harvested from the Sundarbans mangroves. This practice incentivizes the protection of these forests. If the forest goes, the bees go, and the livelihood of the foragers goes. By valuing the wild product, we place economic value on preserving the wild ecosystem itself.</p>
+      <p class="mb-4">Our wild honey is harvested from wild floral regions. This practice incentivizes the protection of these forests. If the forest goes, the bees go, and the livelihood of the foragers goes. By valuing the wild product, we place economic value on preserving the wild ecosystem itself.</p>
 
       <h3 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">5. Supporting Traditional Livelihoods</h3>
       <p class="mb-4">Sourcing naturally often means working with small-holder farmers and tribal foragers who have inherited their knowledge over generations. Your purchase supports these communities directly, helping to keep ancient agricultural traditions alive in the face of industrial monoculture.</p>
@@ -243,7 +264,7 @@ export const blogPosts: BlogPost[] = [
       <p class="mb-4">At Earthy Munchy, our <a href="/#/product/honey-vault" class="text-brand-moss underline">Honey Vault collection</a> is raw and unfiltered. You might find specks of pollen or beeswax, and it might crystallize in winter. We wear these "imperfections" as badges of honor.</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">Enzymes & The Living Food</h2>
-      <p class="mb-4">Raw honey is a living food. It contains natural probiotics and prebiotics that support gut health. Our <a href="/#/product/wildflower-honey" class="text-brand-moss underline">Sundarban Wild Honey</a> is harvested by tribal foragers who squeeze the honeycombs by hand, ensuring minimal processing. This preserves the medicinal properties that have been valued in Ayurveda for centuries.</p>
+      <p class="mb-4">Raw honey is a living food. It contains natural probiotics and prebiotics that support gut health. Our <a href="/#/product/wildflower-honey" class="text-brand-moss underline">Wild Floral Honey</a> is harvested by tribal foragers who squeeze the honeycombs by hand, ensuring minimal processing. This preserves the medicinal properties that have been valued in Ayurveda for centuries.</p>
 
       <p class="mt-8 font-medium">Experience the raw difference. Try our <a href="/#/shop" class="text-brand-moss underline">wild-harvested honey varieties</a> today.</p>
     `,
@@ -342,16 +363,16 @@ export const blogPosts: BlogPost[] = [
     id: 'saving-mangroves-honey',
     slug: 'saving-mangroves-one-jar-at-a-time',
     title: 'Saving the Mangroves, One Jar at a Time',
-    excerpt: 'How ethical wild honey harvesting in the Sundarbans protects the Royal Bengal Tiger\'s habitat and supports tribal livelihoods.',
+    excerpt: 'How ethical wild honey harvesting in wild floral regions protects the wildlife habitat and supports tribal livelihoods.',
     content: `
-      <p class="mb-4">The Sundarbans is the world's largest mangrove forest, a UNESCO World Heritage site, and the home of the majestic Royal Bengal Tiger. It's also the source of one of the world's most unique honeys. But this ecosystem is fragile. At Earthy Munchy, we believe that enjoying nature's bounty shouldn't cost the earth.</p>
+      <p class="mb-4">Our wild floral regions are home to diverse ecosystems and majestic wildlife. It's also the source of one of the world's most unique honeys. But this ecosystem is fragile. At Earthy Munchy, we believe that enjoying nature's bounty shouldn't cost the earth.</p>
 
       <div class="bg-brand-cream/30 p-6 rounded-xl my-8 border-l-4 border-brand-moss">
         <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">People Also Ask</h3>
         <div class="space-y-6">
             <div>
-                <h4 class="font-bold text-brand-moss text-sm uppercase tracking-wide mb-1">Where does Sundarban honey come from?</h4>
-                <p class="text-sm">It comes from the nectar of mangrove flowers like Khalisha, Garan, and Bain. The bees (<i>Apis dorsata</i>) build massive hives high in the trees. The honey has a unique, slightly saline tang due to the brackish waters of the delta, making it unlike any other honey on earth.</p>
+                <h4 class="font-bold text-brand-moss text-sm uppercase tracking-wide mb-1">Where does this wild honey come from?</h4>
+                <p class="text-sm">It comes from the nectar of wild flowers like Khalisha, Garan, and Bain. The bees (<i>Apis dorsata</i>) build massive hives high in the trees. The honey has a unique, slightly saline tang due to the brackish waters of the region, making it unlike any other honey on earth.</p>
             </div>
             <div>
                 <h4 class="font-bold text-brand-moss text-sm uppercase tracking-wide mb-1">Is wild honey harvesting sustainable?</h4>
@@ -368,7 +389,7 @@ export const blogPosts: BlogPost[] = [
       <p class="mb-4">Harvesting this honey is dangerous work. The "Moulis" (traditional honey hunters) venture into the deep forest where tigers roam freely. It is a relationship built on fear and respect. By supporting ethical trade, we ensure these brave harvesters are paid fairly for their high-risk, high-skill work.</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">The Economic Shield</h2>
-      <p class="mb-4">Conservation isn't just about fences; it's about economics. If the mangroves are seen only as wood for charcoal, they will disappear. If they are seen as the eternal source of "liquid gold," they will be protected. Every jar of <a href="/#/product/wildflower-honey" class="text-brand-moss underline">Sundarban Wild Honey</a> you buy is a vote for the forest.</p>
+      <p class="mb-4">Conservation isn't just about fences; it's about economics. If the mangroves are seen only as wood for charcoal, they will disappear. If they are seen as the eternal source of "liquid gold," they will be protected. Every jar of <a href="/#/product/wildflower-honey" class="text-brand-moss underline">Wild Floral Honey</a> you buy is a vote for the forest.</p>
 
       <p class="mt-8 font-medium">Taste the wild and support the wild. Shop our <a href="/#/shop" class="text-brand-moss underline">Ethical Honey Collection</a>.</p>
     `,

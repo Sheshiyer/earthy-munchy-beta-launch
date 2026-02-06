@@ -62,7 +62,7 @@ const ProductDetail: React.FC = () => {
         <div className="min-h-screen bg-white animate-fade-in pb-20">
             <SEO
                 title={`${product.name} | Earthy Munchy`}
-                description={product.description}
+                description={product.metaDescription}
                 image={product.image}
                 imageAlt={product.name}
                 type="product"

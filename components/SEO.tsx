@@ -24,13 +24,13 @@ const SEO: React.FC<SEOProps> = ({
   description, 
   canonical, 
   type = 'website',
-  image = '/img/story-hero-terroir.png', // Default image
+  image = '/img/og/og-default.png', // Default OG image
   imageAlt = 'Earthy Munchy - Naturally Sourced',
   schema,
   aiTags
 }) => {
   const siteUrl = 'https://earthymunchy.com'; // Replace with actual domain when live
-  const fullCanonical = canonical || window.location.href;
+  const fullCanonical = canonical || `${siteUrl}${window.location.pathname}`;
   const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
   // Ensure schema is always an array for simpler rendering
@@ -61,6 +61,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:image:alt" content={imageAlt} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />

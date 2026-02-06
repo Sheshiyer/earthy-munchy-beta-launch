@@ -1,13 +1,18 @@
 import React from 'react';
 import SEO from '../components/SEO';
+import { generateLocalBusinessSchema } from '../utils/ai-seo';
 
 const Contact: React.FC = () => {
+  const businessSchema = generateLocalBusinessSchema();
+
   return (
     <div className="min-h-screen bg-brand-cream/30 animate-fade-in py-16">
-        <SEO 
+        <SEO
             title="Contact Us | Earthy Munchy"
-            description="Get in touch with Earthy Munchy. Whether for corporate gifting, wholesale partnerships, or general enquiries, we'd love to hear from you."
+            description="Contact Earthy Munchy for bulk orders, corporate gifting & wholesale partnerships. Custom spice & honey gift sets available. Reach us today!"
             canonical="https://earthymunchy.com/#/contact"
+            image="/img/og/og-contact.png"
+            schema={businessSchema}
         />
         <div className="max-w-2xl mx-auto px-6">
             <div className="text-center mb-12">

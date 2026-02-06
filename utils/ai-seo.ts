@@ -21,6 +21,44 @@ export const generateOrganizationSchema = () => {
   };
 };
 
+export const generateWebSiteSchema = () => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Earthy Munchy',
+    url: SITE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/shop?q={search_term_string}`
+      },
+      'query-input': 'required name=search_term_string'
+    }
+  };
+};
+
+export const generateLocalBusinessSchema = () => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Earthy Munchy',
+    image: `${SITE_URL}/logo-tm.png`,
+    '@id': SITE_URL,
+    url: SITE_URL,
+    telephone: '+91-XXX-XXX-XXXX',
+    email: 'hello@earthymunchy.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Mercury Inc.',
+      addressLocality: 'Bangalore',
+      postalCode: '560084',
+      addressCountry: 'IN'
+    },
+    sameAs: ['https://www.instagram.com/earthy.munchy']
+  };
+};
+
 export const generateBreadcrumbSchema = (items: { name: string; item: string }[]) => {
   return {
     '@context': 'https://schema.org',
@@ -101,12 +139,17 @@ export const generateFAQSchema = (content: string) => {
 
 export const generateProductSchema = (product: Product) => {
     const imageUrl = product.image.startsWith('http') ? product.image : `${SITE_URL}${product.image}`;
-    
-    return {
+
+    const schema: any = {
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: product.name,
-      image: [imageUrl],
+      image: [{
+        '@type': 'ImageObject',
+        url: imageUrl,
+        width: '1200',
+        height: '1200'
+      }],
       description: product.description,
       sku: product.id,
       brand: {
@@ -118,10 +161,55 @@ export const generateProductSchema = (product: Product) => {
         url: `${SITE_URL}/#/product/${product.id}`,
         priceCurrency: 'INR',
         price: product.price,
+        priceValidUntil: '2026-12-31',
         itemCondition: 'https://schema.org/NewCondition',
-        availability: 'https://schema.org/InStock'
+        availability: product.id === 'wildflower-honey'
+          ? 'https://schema.org/InStock'
+          : 'https://schema.org/PreOrder',
+        seller: {
+          '@type': 'Organization',
+          name: 'Earthy Munchy'
+        },
+        shippingDetails: {
+          '@type': 'OfferShippingDetails',
+          shippingRate: {
+            '@type': 'MonetaryAmount',
+            value: '0',
+            currency: 'INR'
+          },
+          shippingDestination: {
+            '@type': 'DefinedRegion',
+            addressCountry: 'IN'
+          },
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 2,
+              maxValue: 3,
+              unitCode: 'DAY'
+            },
+            transitTime: {
+              '@type': 'QuantitativeValue',
+              minValue: 3,
+              maxValue: 7,
+              unitCode: 'DAY'
+            }
+          }
+        }
       }
     };
+
+    // Add aggregateRating if available
+    if (product.rating && product.reviewCount) {
+      schema.aggregateRating = {
+        '@type': 'AggregateRating',
+        ratingValue: product.rating.toString(),
+        reviewCount: product.reviewCount.toString()
+      };
+    }
+
+    return schema;
   };
 
 export const stripHtml = (html: string) => {

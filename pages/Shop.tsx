@@ -29,13 +29,14 @@ const Shop: React.FC = () => {
         <div className="min-h-screen bg-white pb-20 animate-fade-in">
             <SEO
                 title="Shop Premium Spices & Wild Honey | Earthy Munchy"
-                description="Browse our curated collection of authentic Ceylon Cinnamon, wild-harvested honey, and premium spices sourced directly from sustainable farms."
+                description="Shop premium Ceylon Cinnamon from ₹259, wild honey & authentic spices. Hand-picked from sustainable farms. Free shipping over ₹499. Order now!"
                 canonical="https://earthymunchy.com/#/shop"
+                image="/img/og/og-shop.jpg"
             />
             <div className="bg-brand-cream/30 py-16 mb-12">
                 <div className="max-w-7xl mx-auto px-6">
                     <h1 className="text-4xl lg:text-5xl font-serif font-medium text-brand-dark mb-4">Shop Essentials</h1>
-                    <p className="text-neutral-500 max-w-xl">Curated ingredients from their authentic origins. Whether it's the pencil-thin C5 Cinnamon from Sri Lanka or the wild honey from the Sundarbans.</p>
+                    <p className="text-neutral-500 max-w-xl">Curated ingredients from their authentic origins. Whether it's the pencil-thin C5 Cinnamon from Sri Lanka or the Wild Floral Honey.</p>
                 </div>
             </div>
 

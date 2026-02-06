@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Leaf, ShieldCheck, Globe } from 'lucide-react';
 import { products, honeyVarieties } from '../data';
 import SEO from '../components/SEO';
+import { generateWebSiteSchema } from '../utils/ai-seo';
 
 const Home: React.FC = () => {
+  const websiteSchema = generateWebSiteSchema();
   const featuredSpices = products.filter(p => ['cinnamon-c5', 'cloves-g1', 'cinnamon-powder'].includes(p.id));
   const honeyVault = products.find(p => p.category === 'set');
 
@@ -26,7 +28,9 @@ const Home: React.FC = () => {
     <div className="animate-fade-in">
       <SEO
         title="Earthy Munchy | Premium Naturally Sourced Spices & Honey"
-        description="Discover authentic Ceylon Cinnamon, wild-harvested honey, and premium spices sourced directly from farms in Sri Lanka and India."
+        description="Buy authentic Ceylon Cinnamon C5 & wild honey from Sri Lanka. Premium hand-picked spices delivered fresh. Shop naturally sourced ingredients today!"
+        image="/img/og/og-home.png"
+        schema={websiteSchema}
       />
       {/* Hero Section */}
       <header className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
