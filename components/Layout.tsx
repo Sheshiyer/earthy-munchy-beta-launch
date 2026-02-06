@@ -58,13 +58,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <button
+            {/* <button
               onClick={() => setIsAIChefOpen(true)}
               className="hidden md:flex items-center gap-2 bg-brand-cream text-brand-moss px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-brand-moss hover:text-white transition-all border border-brand-moss/20"
             >
               <Sparkles size={14} />
               AI Chef
-            </button>
+            </button> */}
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-brand-dark hover:bg-neutral-100 rounded-full transition-colors"
@@ -88,7 +88,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link to="/story" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Our Story</Link>
               <Link to="/journal" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Journal</Link>
               <Link to="/contact" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Contact</Link>
-              <button
+              {/* <button
                 onClick={() => {
                   closeMobileMenu();
                   setIsAIChefOpen(true);
@@ -96,7 +96,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 className="flex items-center gap-2 text-brand-moss font-medium mt-4"
               >
                 <Sparkles size={18} /> Ask AI Chef
-              </button>
+              </button> */}
             </div>
           </div>
         )}
@@ -107,7 +107,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      <AIChef isOpen={isAIChefOpen} onClose={() => setIsAIChefOpen(false)} />
+      {/* <AIChef isOpen={isAIChefOpen} onClose={() => setIsAIChefOpen(false)} /> */}
       <CartDrawer />
 
       {/* Footer */}

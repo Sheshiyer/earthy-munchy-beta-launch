@@ -6,11 +6,11 @@ export const products: Product[] = [
     name: 'Ceylon Cinnamon',
     subtitle: 'Grade C5 - Premium',
     description: 'Ultra-thin quills peeled from the inner bark of the Cinnamomum verum tree. Features a light golden-brown hue and a delicate sweet aroma. Naturally low in coumarin, it delivers unmatched purity.',
-    metaDescription: 'Buy premium Ceylon Cinnamon C5 grade at ₹259. Ultra-thin hand-picked quills from Sri Lanka. True cinnamon with low coumarin, sweet aroma & unmatched purity.',
-    price: 259,
+    metaDescription: 'Buy premium Ceylon Cinnamon C5 grade at ₹589. Ultra-thin hand-picked quills from Sri Lanka. True cinnamon with low coumarin, sweet aroma & unmatched purity.',
+    price: 589,
     weight: '100g',
     category: 'spice',
-    grade: 'C5',
+    grade: 'C5 Grade',
     features: ['Ultra-thin quills', 'Low coumarin', 'Sweet aroma', 'Hand-picked'],
     tags: ['Best Seller', 'Premium'],
     image: '/img/newproductshots/cinnamon-c5-ps1.JPG',
@@ -30,7 +30,7 @@ export const products: Product[] = [
     price: 389,
     weight: '100g',
     category: 'spice',
-    grade: 'H2',
+    grade: 'H2 Grade',
     features: ['Versatile', 'Robust flavor', 'Everyday cooking', 'Value'],
     tags: ['Everyday'],
     image: '/img/newproductshots/cinnamon-h2-ps1.PNG',
@@ -64,13 +64,13 @@ export const products: Product[] = [
   {
     id: 'cloves-g1',
     name: 'True Ceylon Cloves',
-    subtitle: 'CG 1 - Premium Hand Picked',
+    subtitle: 'CG1 - Premium Hand Picked',
     description: 'Hand-selected at peak maturity and delicately cured. These cloves offer a bold aroma, refined flavor, and natural richness. Known as the "true jewel of the Spice Island".',
     metaDescription: 'Premium Ceylon Cloves CG1 grade at ₹239. Hand-picked at peak maturity. Bold aroma, high oil content. True jewel from Sri Lanka\'s Spice Island. Buy now!',
     price: 239,
     weight: '50g',
     category: 'spice',
-    grade: 'CG 1',
+    grade: 'CG1',
     features: ['Hand-picked', 'Bold aroma', 'High oil content', 'Premium'],
     tags: ['Premium'],
     image: '/img/newproductshots/cloves-cg1-ps1.jpg',
@@ -125,7 +125,7 @@ export const products: Product[] = [
   },
   {
     id: 'wildflower-honey',
-    name: 'Single Wildflower Honey',
+    name: 'Wildflower Honey',
     subtitle: 'From Wild Floral Honey',
     description: 'Exotic, saline-sweet nectar harvested from wild floral honey. Pure, unheated, and unblended, capturing the essence of the wild.',
     metaDescription: 'Buy Wild Floral Honey at ₹339. Exotic saline-sweet nectar from wild flowers. Raw, unheated, unfiltered. Single origin honey from nature\'s untouched forests.',
@@ -134,7 +134,7 @@ export const products: Product[] = [
     category: 'honey',
     grade: 'Raw & Unfiltered',
     features: ['Wild Harvested', 'Mangrove Flora', 'Raw', 'Unfiltered'],
-    tags: ['New', 'Single Origin'],
+    tags: ['Best Seller', 'New', 'Single Origin'],
     image: '/img/newproductshots/wildflower-honey-ps1.png',
     images: [
       '/img/newproductshots/wildflower-honey-ps1.png',
@@ -318,10 +318,10 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'decoding-spice-grades',
     slug: 'decoding-spice-grades-c5-h2-g1',
-    title: 'Decoding Spice Grades: What Do C5, H2, and CG 1 Actually Mean?',
+    title: 'Decoding Spice Grades: What Do C5, H2, and CG1 Actually Mean?',
     excerpt: 'A connoisseur\'s guide to understanding spice quality labels. Learn to choose the right grade for your culinary needs like a pro.',
     content: `
-      <p class="mb-4">When you buy wine, you check the vintage and region. When you buy coffee, you look for the roast. But when it comes to spices, most of us just grab the jar that says "Cinnamon." At Earthy Munchy, we believe in transparency. We label our products with their specific grades—C5, H2, CG 1—because these codes tell you exactly what you're eating.</p>
+      <p class="mb-4">When you buy wine, you check the vintage and region. When you buy coffee, you look for the roast. But when it comes to spices, most of us just grab the jar that says "Cinnamon." At Earthy Munchy, we believe in transparency. We label our products with their specific grades—C5, H2, CG1—because these codes tell you exactly what you're eating.</p>
 
       <div class="bg-brand-cream/30 p-6 rounded-xl my-8 border-l-4 border-brand-moss">
         <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">People Also Ask</h3>
@@ -346,7 +346,7 @@ export const blogPosts: BlogPost[] = [
       <strong>H2 (Hamburg 2):</strong> A slightly thicker quill with a more robust, woody flavor. It holds up beautifully in rich curries, stews, and chai where you want the spice to shine through bold ingredients.</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">Clove Grading</h2>
-      <p class="mb-4"><strong>CG 1 (Hand Picked):</strong> Large, perfect buds with reddish-brown stems and lighter heads. No debris, no headless stems. <br/>
+      <p class="mb-4"><strong>CG1 (Hand Picked):</strong> Large, perfect buds with reddish-brown stems and lighter heads. No debris, no headless stems. <br/>
       <strong>CG2 (Cloves Grade 2):</strong> Slightly smaller but still rich in oil. Excellent value for grinding into spice mixes (Masalas).</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">Why It Matters</h2>

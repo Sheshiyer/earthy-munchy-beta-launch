@@ -260,8 +260,8 @@ const Home: React.FC = () => {
                       alt={product.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    {product.tags.includes('Best Seller') && (
-                      <span className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-dark rounded-sm">
+                    {product.tags?.includes('Best Seller') && (
+                      <span className="absolute top-4 left-4 bg-brand-copper text-white px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded">
                         Best Seller
                       </span>
                     )}

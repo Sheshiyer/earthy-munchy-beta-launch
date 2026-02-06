@@ -81,6 +81,11 @@ const Shop: React.FC = () => {
                                         Gift Set
                                     </div>
                                 )}
+                                {product.tags?.includes('Best Seller') && !product.category.includes('set') && (
+                                    <div className="absolute top-4 right-4 bg-brand-copper text-white text-[10px] font-bold uppercase px-2 py-1 rounded">
+                                        Best Seller
+                                    </div>
+                                )}
                                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-center pb-6">
                                     <span className="bg-white text-brand-dark px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide">View Product</span>
                                 </div>
