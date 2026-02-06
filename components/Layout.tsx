@@ -42,8 +42,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Logo */}
           <Link to="/" className="flex flex-col items-center lg:items-start group" onClick={closeMobileMenu}>
-            <span className="text-xl lg:text-2xl font-bold tracking-tighter text-brand-dark group-hover:text-brand-moss transition-colors">
-              <span className="font-earthy">EARTHY</span> <span className="font-munchy">MUNCHY</span>
+            <span className="text-xl lg:text-2xl tracking-tighter text-brand-dark group-hover:text-brand-moss transition-colors">
+              <span className="font-earthy font-normal">EARTHY</span> <span className="font-munchy font-bold">MUNCHY</span>
             </span>
           </Link>
 
@@ -116,7 +116,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
               <h4 className="text-lg mb-6">
-                <span className="font-earthy font-bold">EARTHY</span> <span className="font-munchy font-bold">MUNCHY</span>
+                <span className="font-earthy font-normal">EARTHY</span> <span className="font-munchy font-bold">MUNCHY</span>
               </h4>
               <p className="text-brand-cream/60 text-sm leading-relaxed mb-6">
                 From native roots to global hearts. Curating the finest authentic ingredients from their origins.
