@@ -5,18 +5,18 @@ import { products, honeyVarieties } from '../data';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
-  const featuredSpices = products.filter(p => p.category === 'spice').slice(0, 3);
+  const featuredSpices = products.filter(p => ['cinnamon-c5', 'cloves-g1', 'cinnamon-powder'].includes(p.id));
   const honeyVault = products.find(p => p.category === 'set');
-  
+
   // Optimize video loading to prevent double downloads/aborts
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    
+
     // Initial check
     checkMobile();
-    
+
     // Listener
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
-      <SEO 
+      <SEO
         title="Earthy Munchy | Premium Naturally Sourced Spices & Honey"
         description="Discover authentic Ceylon Cinnamon, wild-harvested honey, and premium spices sourced directly from farms in Sri Lanka and India."
       />
@@ -43,9 +43,9 @@ const Home: React.FC = () => {
             aria-label="Atmospheric mist rolling over lush spice gardens"
           >
             <source src="/img/newproductshots/hero-mist-desktop.mp4" type="video/mp4" />
-            <img 
-              src="/img/newproductshots/story-hero-terroir.png" 
-              alt="Spices Hero Fallback" 
+            <img
+              src="/img/newproductshots/story-hero-terroir.png"
+              alt="Spices Hero Fallback"
               className="w-full h-full object-cover opacity-90"
             />
           </video>
@@ -62,9 +62,9 @@ const Home: React.FC = () => {
             aria-label="Atmospheric mist rolling over lush spice gardens"
           >
             <source src="/img/newproductshots/hero-mist-mobile.mp4" type="video/mp4" />
-            <img 
-              src="/img/newproductshots/story-hero-terroir.png" 
-              alt="Spices Hero Fallback" 
+            <img
+              src="/img/newproductshots/story-hero-terroir.png"
+              alt="Spices Hero Fallback"
               className="w-full h-full object-cover opacity-90"
             />
           </video>
@@ -76,24 +76,24 @@ const Home: React.FC = () => {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-moss/10 border border-brand-moss/20 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-moss"></span>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-moss">Est. 2025 • Sri Lanka & India</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-moss">Est 2025 • Sri Lanka</span>
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-serif font-medium text-brand-dark mb-6 leading-tight">
-              From Native Roots <br/>
+              From Native Roots <br />
               <span className="text-brand-moss italic">to Global Hearts.</span>
             </h1>
-            
-            <p className="text-lg text-neutral-600 mb-10 leading-relaxed max-w-md">
-              Curated native ingredients from their authentic origins, shared in their most honest form. Hand-picked Ceylon Cinnamon and Pure Wild Honey.
+
+            <p className="text-xl font-serif text-neutral-600 mb-10 leading-relaxed max-w-md italic">
+              Curated Native Ingredients from authentic origins, in their most honest form. Hand-picked Ceylon Cinnamon, Cloves & Pure Wild Honey.
             </p>
-            
+
             <div className="flex flex-wrap gap-4">
               <Link to="/shop" className="px-8 py-4 bg-brand-dark text-white text-sm font-semibold tracking-wide rounded-full hover:bg-brand-moss transition-all hover:-translate-y-1 shadow-lg shadow-brand-dark/20">
                 Shop Collection
               </Link>
               <Link to="/story" className="px-8 py-4 bg-white border border-brand-dark/20 text-brand-dark text-sm font-semibold tracking-wide rounded-full hover:bg-neutral-50 transition-all flex items-center gap-2 group">
-                Our Story 
+                Our Story
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -101,38 +101,135 @@ const Home: React.FC = () => {
         </div>
       </header>
 
-      {/* Values Section */}
-      <section className="py-24 bg-white border-b border-brand-moss/5">
+      {/* Values Section - Origin, Wild, Craft */}
+      <section className="py-32 bg-gradient-to-b from-white via-brand-cream/20 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center text-brand-moss mb-2">
-                <Globe size={24} />
+
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <span className="text-xs font-bold text-brand-copper uppercase tracking-[0.3em]">Our Philosophy</span>
+            <h2 className="text-4xl lg:text-5xl font-serif font-medium text-brand-dark mt-4">
+              Rooted in Purpose
+            </h2>
+          </div>
+
+          {/* Origin - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-32 relative">
+            {/* Decorative blur */}
+            <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-72 h-72 bg-brand-moss/10 rounded-full blur-3xl" />
+
+            <div className="relative z-10">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/img/newproductshots/story-hero-terroir.png"
+                  alt="Native farmlands and origins"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              <h3 className="text-xl font-serif font-bold text-brand-dark">Origin</h3>
-              <p className="text-neutral-500 text-sm leading-relaxed">
-                It begins at the source. We travel to farms in Sri Lanka and forests in India to bring you native goodness.
-              </p>
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-brand-cream">
+                <Globe size={32} className="text-brand-moss" />
+              </div>
             </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center text-brand-moss mb-2">
-                <Leaf size={24} />
+
+            <div className="space-y-6 relative z-10">
+              <span className="inline-block text-xs font-bold text-brand-copper uppercase tracking-widest">01</span>
+              <h3 className="text-3xl lg:text-4xl font-serif font-bold text-brand-dark">Origin</h3>
+              <div className="text-neutral-600 leading-relaxed space-y-4 text-lg">
+                <p>
+                  Earthy Munchy was born from a love for native foods and the stories behind them. Inspired by journeys across farms and food cultures around the world, we saw the beauty of ingredients grown where they truly belong—rooted in land, tradition, and time.
+                </p>
+                <p>
+                  Our purpose is simple: to bring native products from different parts of the world together under one roof, carefully sourced from their origins and shared in their most honest form.
+                </p>
               </div>
-              <h3 className="text-xl font-serif font-bold text-brand-dark">Wild</h3>
-              <p className="text-neutral-500 text-sm leading-relaxed">
-                Nature has no recipe. Our honey is gathered from wild blossoms, free from shortcuts and artificial intervention.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center text-brand-moss mb-2">
-                <ShieldCheck size={24} />
+              <div className="bg-gradient-to-r from-brand-cream to-brand-cream/50 rounded-xl p-6 border-l-4 border-brand-moss">
+                <p className="font-serif text-xl text-brand-dark italic">
+                  "Earthy Munchy connects global native goodness to everyday living—naturally."
+                </p>
               </div>
-              <h3 className="text-xl font-serif font-bold text-brand-dark">Craft</h3>
-              <p className="text-neutral-500 text-sm leading-relaxed">
-                 We work with artisans who use time-honoured methods, harvesting with care and respecting the land.
-              </p>
             </div>
           </div>
+
+          {/* Wild - Text Left, Image Right */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-32 relative">
+            {/* Decorative blur */}
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-72 h-72 bg-brand-yellow/20 rounded-full blur-3xl" />
+
+            <div className="space-y-6 relative z-10 order-2 lg:order-1">
+              <span className="inline-block text-xs font-bold text-brand-copper uppercase tracking-widest">02</span>
+              <h3 className="text-3xl lg:text-4xl font-serif font-bold text-brand-dark">Wild</h3>
+              <div className="text-neutral-600 leading-relaxed space-y-4 text-lg">
+                <p>
+                  Some of the world's most treasured foods are born wild—shaped by forests, seasons, and time. Honey gathered from flowering landscapes, cinnamon and cloves grown in their native soils, and maple drawn from ancient trees all begin exactly where nature intended.
+                </p>
+                <p>
+                  At Earthy Munchy, these wild ingredients are sourced from their authentic origins and handled with care, allowing their natural character to remain untouched. Free from shortcuts and unnecessary intervention, they carry the purity, aroma, and depth that only nature can create.
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-brand-cream to-brand-cream/50 rounded-xl p-6 border-l-4 border-brand-moss">
+                <p className="font-serif text-xl text-brand-dark italic">
+                  "Wild by origin. Honest by nature."
+                </p>
+              </div>
+            </div>
+
+            <div className="relative z-10 order-1 lg:order-2">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/img/newproductshots/story-sourcing-wild-honey.png"
+                  alt="Wild honey harvesting"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-brand-cream">
+                <Leaf size={32} className="text-brand-moss" />
+              </div>
+            </div>
+          </div>
+
+          {/* Craft - Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative">
+            {/* Decorative blur */}
+            <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-72 h-72 bg-brand-copper/10 rounded-full blur-3xl" />
+
+            <div className="relative z-10">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/img/newproductshots/story-sourcing-blade.png"
+                  alt="Traditional craftsmanship"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-brand-cream">
+                <ShieldCheck size={32} className="text-brand-moss" />
+              </div>
+            </div>
+
+            <div className="space-y-6 relative z-10">
+              <span className="inline-block text-xs font-bold text-brand-copper uppercase tracking-widest">03</span>
+              <h3 className="text-3xl lg:text-4xl font-serif font-bold text-brand-dark">Craft</h3>
+              <div className="text-neutral-600 leading-relaxed space-y-4 text-lg">
+                <p>
+                  Each product begins with native ingredients, grown in the environments where they naturally thrive and nurtured by generations of traditional knowledge.
+                </p>
+                <p>
+                  We work closely with farmers, growers, and artisans who use time-honored methods—harvesting with care, processing minimally, and respecting the natural rhythm of the land. This mindful craft not only preserves flavor and nutrition, but also supports sustainable practices that protect soil, biodiversity, and local communities.
+                </p>
+                <p>
+                  By honoring tradition and choosing sustainability over shortcuts, Earthy Munchy ensures that native products retain their true character—just as they have for centuries.
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-brand-cream to-brand-cream/50 rounded-xl p-6 border-l-4 border-brand-moss">
+                <p className="font-serif text-xl text-brand-dark italic">
+                  "What reaches you is not just food, but the result of thoughtful craftsmanship rooted in nature and shaped by human care."
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -154,9 +251,9 @@ const Home: React.FC = () => {
               <Link to={`/product/${product.id}`} key={product.id} className="group">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                   <div className="aspect-square relative overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={product.name} 
+                    <img
+                      src={product.image}
+                      alt={product.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     {product.tags.includes('Best Seller') && (
@@ -187,36 +284,36 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-                <div className="absolute -top-10 -left-10 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl"></div>
-                <video 
-                  src="/img/newproductshots/honey-video-primary.mp4" 
-                  poster="/img/newproductshots/texture-honey-drop.png"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full max-w-md mx-auto relative z-10 drop-shadow-2xl rounded-2xl"
-                />
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl"></div>
+              <video
+                src="/img/newproductshots/honey-video-primary.mp4"
+                poster="/img/newproductshots/texture-honey-drop.png"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full max-w-md mx-auto relative z-10 drop-shadow-2xl rounded-2xl"
+              />
             </div>
             <div className="order-1 lg:order-2">
-                <span className="text-xs font-bold text-brand-copper uppercase tracking-widest">The Honey Vault</span>
-                <h2 className="text-4xl lg:text-5xl font-serif font-medium text-brand-dark mt-4 mb-6">
-                    A Curated Journey Through Nature.
-                </h2>
-                <p className="text-neutral-600 mb-8 leading-relaxed">
-                    Thousands of wild blossoms across India—each kissed by the sun. Earthy Munchy partners with ethical beekeepers to craft pure, unblended honey from diverse floral landscapes.
-                </p>
-                <div className="grid grid-cols-2 gap-4 mb-10">
-                    {honeyVarieties.map((honey, index) => (
-                      <div key={index} className="bg-brand-cream/50 p-4 rounded-lg">
-                          <span className="block text-brand-dark font-serif font-bold mb-1">{honey.name.replace(' Honey', '')}</span>
-                          <span className="text-xs text-neutral-500">{honey.desc.split(',')[0]}</span>
-                      </div>
-                    ))}
-                </div>
-                <Link to={`/product/${honeyVault?.id}`} className="inline-block px-8 py-3 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-moss transition-colors">
-                    Explore The Vault
-                </Link>
+              <span className="text-xs font-bold text-brand-copper uppercase tracking-widest">The Honey Vault</span>
+              <h2 className="text-4xl lg:text-5xl font-serif font-medium text-brand-dark mt-4 mb-6">
+                A Curated Journey Through Nature.
+              </h2>
+              <p className="text-neutral-600 mb-8 leading-relaxed">
+                Thousands of wild blossoms across India—each kissed by the sun. Earthy Munchy partners with ethical beekeepers to craft pure, unblended honey from diverse floral landscapes.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {honeyVarieties.map((honey, index) => (
+                  <div key={index} className="bg-brand-cream/50 p-4 rounded-lg">
+                    <span className="block text-brand-dark font-serif font-bold mb-1">{honey.name.replace(' Honey', '')}</span>
+                    <span className="text-xs text-neutral-500">{honey.desc.split(',')[0]}</span>
+                  </div>
+                ))}
+              </div>
+              <Link to={`/product/${honeyVault?.id}`} className="inline-block px-8 py-3 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-moss transition-colors">
+                Explore The Vault
+              </Link>
             </div>
           </div>
         </div>
@@ -225,18 +322,18 @@ const Home: React.FC = () => {
       {/* Newsletter */}
       <section className="py-20 bg-brand-dark text-white">
         <div className="max-w-md mx-auto px-6 text-center">
-            <h2 className="text-2xl font-serif font-medium mb-4">Join the community</h2>
-            <p className="text-white/60 text-sm mb-8">Sign up for early access to new drops and exclusive authentic recipes.</p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input 
-                    type="email" 
-                    placeholder="email@address.com" 
-                    className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white/50 text-white placeholder:text-white/40"
-                />
-                <button className="px-6 py-3 bg-white text-brand-dark text-sm font-bold rounded-lg hover:bg-brand-cream transition-colors">
-                    Subscribe
-                </button>
-            </form>
+          <h2 className="text-2xl font-serif font-medium mb-4">Join the community</h2>
+          <p className="text-white/60 text-sm mb-8">Sign up for early access to new drops and exclusive authentic recipes.</p>
+          <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="email@address.com"
+              className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white/50 text-white placeholder:text-white/40"
+            />
+            <button className="px-6 py-3 bg-white text-brand-dark text-sm font-bold rounded-lg hover:bg-brand-cream transition-colors">
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
     </div>

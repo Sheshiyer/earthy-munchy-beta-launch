@@ -28,13 +28,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </script>
       </Helmet>
       {/* Navigation */}
-      <nav className={`fixed w-full z-40 transition-all duration-300 ${
-        location.pathname === '/' ? 'bg-white/80 backdrop-blur-md' : 'bg-white shadow-sm'
-      }`}>
+      <nav className={`fixed w-full z-40 transition-all duration-300 ${location.pathname === '/' ? 'bg-white/80 backdrop-blur-md' : 'bg-white shadow-sm'
+        }`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          
+
           {/* Mobile Toggle */}
-          <button 
+          <button
             className="lg:hidden text-brand-dark"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -44,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Logo */}
           <Link to="/" className="flex flex-col items-center lg:items-start group" onClick={closeMobileMenu}>
             <span className="text-xl lg:text-2xl font-bold tracking-tighter text-brand-dark group-hover:text-brand-moss transition-colors">
-              <span className="font-earthy">Earthy</span> <span className="font-munchy">Munchy</span>
+              <span className="font-earthy">EARTHY</span> <span className="font-munchy">MUNCHY</span>
             </span>
           </Link>
 
@@ -59,14 +58,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setIsAIChefOpen(true)}
               className="hidden md:flex items-center gap-2 bg-brand-cream text-brand-moss px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-brand-moss hover:text-white transition-all border border-brand-moss/20"
             >
               <Sparkles size={14} />
               AI Chef
             </button>
-            <button 
+            <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-brand-dark hover:bg-neutral-100 rounded-full transition-colors"
             >
@@ -89,10 +88,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link to="/story" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Our Story</Link>
               <Link to="/journal" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Journal</Link>
               <Link to="/contact" onClick={closeMobileMenu} className="text-2xl font-serif text-brand-dark">Contact</Link>
-              <button 
+              <button
                 onClick={() => {
-                    closeMobileMenu();
-                    setIsAIChefOpen(true);
+                  closeMobileMenu();
+                  setIsAIChefOpen(true);
                 }}
                 className="flex items-center gap-2 text-brand-moss font-medium mt-4"
               >
@@ -117,7 +116,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
               <h4 className="text-lg mb-6">
-                <span className="font-earthy font-bold">Earthy</span> <span className="font-munchy font-bold">Munchy</span>
+                <span className="font-earthy font-bold">EARTHY</span> <span className="font-munchy font-bold">MUNCHY</span>
               </h4>
               <p className="text-brand-cream/60 text-sm leading-relaxed mb-6">
                 From native roots to global hearts. Curating the finest authentic ingredients from their origins.
@@ -135,7 +134,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <li><Link to="/shop" className="hover:text-white transition-colors">Ceylon Cinnamon</Link></li>
                 <li><Link to="/shop" className="hover:text-white transition-colors">True Cloves</Link></li>
                 <li><Link to="/shop" className="hover:text-white transition-colors">The Honey Vault</Link></li>
-                <li><Link to="/shop" className="hover:text-white transition-colors">Gift Sets</Link></li>
               </ul>
             </div>
 
@@ -154,11 +152,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>
               <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-brand-cream/80 mb-6">Contact</h4>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-center gap-2"><Phone size={14} /> +91 8025470681</li>
+                <li className="flex items-center gap-2"><Phone size={14} /> +91 9731298446</li>
+                <li className="flex items-center gap-2 relative pl-6"> +91 9611878758</li>
                 <li className="flex items-center gap-2"><Mail size={14} /> hello@earthymunchy.com</li>
                 <li className="opacity-60 text-xs mt-2 leading-relaxed">
-                   Marketed by Mercury Inc.<br/>
-                   Bangalore, India 560084
+                  Marketed by Mercury Inc.<br />
+                  Bangalore, India 560084
                 </li>
               </ul>
             </div>

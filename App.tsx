@@ -13,16 +13,7 @@ import Terms from './pages/legal/Terms';
 import Returns from './pages/legal/Returns';
 import { CartProvider } from './context/CartContext';
 
-// ScrollToTop component to handle scrolling on route change
-const ScrollToTop = () => {
-    const { pathname } = React.useMemo(() => ({ pathname: window.location.hash }), []);
-  
-    React.useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-  
-    return null;
-};
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (

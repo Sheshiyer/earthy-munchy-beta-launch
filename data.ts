@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: 'Ceylon Cinnamon',
     subtitle: 'Grade C5 - Premium',
     description: 'Ultra-thin quills peeled from the inner bark of the Cinnamomum verum tree. Features a light golden-brown hue and a delicate sweet aroma. Naturally low in coumarin, it delivers unmatched purity.',
-    price: 589,
+    price: 259,
     weight: '100g',
     category: 'spice',
     grade: 'C5',
@@ -14,15 +14,9 @@ export const products: Product[] = [
     tags: ['Best Seller', 'Premium'],
     image: '/img/newproductshots/cinnamon-c5-ps1.JPG',
     images: [
-        '/img/newproductshots/cinnamon-c5-ps1.JPG',
-        '/img/newproductshots/cinammon-sticks-c5-ps3.JPG'
-    ],
-    nutrition: {
-        'Calories': '6.4 kcal',
-        'Dietary Fiber': '1.4g',
-        'Calcium': '2.6% DV',
-        'Manganese': '22.7% DV'
-    }
+      '/img/newproductshots/cinnamon-c5-ps1.JPG',
+      '/img/newproductshots/cinammon-sticks-c5-ps3.JPG'
+    ]
   },
   {
     id: 'cinnamon-h2',
@@ -37,8 +31,8 @@ export const products: Product[] = [
     tags: ['Everyday'],
     image: '/img/newproductshots/cinnamon-h2-ps1.PNG',
     images: [
-        '/img/newproductshots/cinnamon-h2-ps1.PNG',
-        '/img/newproductshots/cinnamon-h2-ps2.PNG'
+      '/img/newproductshots/cinnamon-h2-ps1.PNG',
+      '/img/newproductshots/cinnamon-h2-ps2.PNG'
     ]
   },
   {
@@ -46,41 +40,36 @@ export const products: Product[] = [
     name: 'Ceylon Cinnamon Powder',
     subtitle: 'Finely Milled C5',
     description: 'Finely milled from the finest hand-selected C5 quills. Rich in antioxidants with a warm, gentle flavor. Ideal for wellness rituals, smoothies, and baking.',
-    price: 589,
-    weight: '100g',
+    price: 259,
+    weight: '75g',
     category: 'spice',
     grade: 'C5 Powder',
     features: ['High Antioxidants', 'Finely Milled', 'True Cinnamon', 'Wellness'],
     tags: ['Wellness'],
     image: '/img/newproductshots/cinnamon-powder-ps1.PNG',
     images: [
-        '/img/newproductshots/cinnamon-powder-ps1.PNG',
-        '/img/newproductshots/cinnamon-powder-ps2.png'
+      '/img/newproductshots/cinnamon-powder-ps1.PNG',
+      '/img/newproductshots/cinnamon-powder-ps2.png'
     ]
   },
   {
     id: 'cloves-g1',
     name: 'True Ceylon Cloves',
-    subtitle: 'Grade 1 - Premium Hand Picked',
+    subtitle: 'CG 1 - Premium Hand Picked',
     description: 'Hand-selected at peak maturity and delicately cured. These cloves offer a bold aroma, refined flavor, and natural richness. Known as the "true jewel of the Spice Island".',
     price: 239,
     weight: '50g',
     category: 'spice',
-    grade: 'Grade 1',
+    grade: 'CG 1',
     features: ['Hand-picked', 'Bold aroma', 'High oil content', 'Premium'],
     tags: ['Premium'],
-    image: '/img/newproductshots/cloves-cg2-ps2.PNG',
+    image: '/img/newproductshots/cloves-cg1-ps1.jpg',
     images: [
-        '/img/newproductshots/cloves-cg2-ps2.PNG',
-        '/img/newproductshots/cloves-cg2-ps1.PNG',
-        '/img/newproductshots/cloves-cg2-ps3.PNG',
-        '/img/newproductshots/cloves-cg2-ps4.JPG'
-    ],
-    nutrition: {
-        'Calories': 214,
-        'Vitamin C': '45% DV',
-        'Dietary Fiber': '17% DV'
-    }
+      '/img/newproductshots/cloves-cg1-ps1.jpg',
+      '/img/newproductshots/cloves-cg1-ps2.jpg',
+      '/img/newproductshots/cloves-cg1-ps3.jpg',
+      '/img/newproductshots/cloves-cg1-ps4.jpg'
+    ]
   },
   {
     id: 'cloves-cg2',
@@ -95,9 +84,9 @@ export const products: Product[] = [
     tags: ['Value'],
     image: '/img/newproductshots/cloves-cg2-ps1.PNG',
     images: [
-        '/img/newproductshots/cloves-cg2-ps1.PNG',
-        '/img/newproductshots/cloves-cg2-ps2.PNG',
-        '/img/newproductshots/cloves-cg2-ps3.PNG'
+      '/img/newproductshots/cloves-cg2-ps1.PNG',
+      '/img/newproductshots/cloves-cg2-ps1.PNG',
+      '/img/newproductshots/cloves-cg2-ps3.PNG'
     ]
   },
   {
@@ -112,21 +101,16 @@ export const products: Product[] = [
     tags: ['Gift Set', 'Exclusive'],
     image: '/img/newproductshots/honeyvault-ps1.png',
     images: [
-        '/img/newproductshots/honeyvault-ps1.png',
-        '/img/newproductshots/honeyvault-ps2.png'
-    ],
-    nutrition: {
-        'Calories': '64',
-        'Sugars': '16g',
-        'Protein': '0g'
-    }
+      '/img/newproductshots/honeyvault-ps1.png',
+      '/img/newproductshots/honeyvault-ps2.png'
+    ]
   },
   {
     id: 'wildflower-honey',
     name: 'Single Wildflower Honey',
     subtitle: 'Pure Sundarban Wild Flora',
     description: 'Exotic, saline-sweet nectar harvested from the wild mangroves of the Sundarbans. Pure, unheated, and unblended, capturing the essence of the wild.',
-    price: 349,
+    price: 339,
     weight: '250g',
     category: 'honey',
     grade: 'Raw & Unfiltered',
@@ -134,24 +118,19 @@ export const products: Product[] = [
     tags: ['New', 'Single Origin'],
     image: '/img/newproductshots/wildflower-honey-ps1.png',
     images: [
-        '/img/newproductshots/wildflower-honey-ps1.png',
-        '/img/newproductshots/wildflower-honey-ps2.png'
-    ],
-    nutrition: {
-        'Calories': '64',
-        'Sugars': '17g',
-        'Protein': '0g'
-    }
+      '/img/newproductshots/wildflower-honey-ps1.png',
+      '/img/newproductshots/wildflower-honey-ps2.png'
+    ]
   }
 ];
 
 export const honeyVarieties = [
-    { name: 'Tulsi Honey', desc: 'Calming, herbal nectar from sacred basil blooms.' },
-    { name: 'Lychee Honey', desc: 'Fruity and floral sweetness from lush orchards.' },
-    { name: 'Moringa Honey', desc: 'Nutty and smooth, drawn from the miracle tree.' },
-    { name: 'Red Forest Honey', desc: 'Bold, smoky tones from tropical forests.' },
-    { name: 'Black Forest Honey', desc: 'Deep, malty notes from highland evergreens.' },
-    { name: 'Sundarban Wild', desc: 'Exotic, saline-sweet nectar from mangroves.' },
+  { name: 'Tulsi Honey', desc: 'Calming, herbal nectar from sacred basil blooms.' },
+  { name: 'Lychee Honey', desc: 'Fruity and floral sweetness from lush orchards.' },
+  { name: 'Moringa Honey', desc: 'Nutty and smooth, drawn from the miracle tree.' },
+  { name: 'Red Forest Honey', desc: 'Bold, smoky tones from tropical forests.' },
+  { name: 'Black Forest Honey', desc: 'Deep, malty notes from highland evergreens.' },
+  { name: 'Sundarban Wild', desc: 'Exotic, saline-sweet nectar from mangroves.' },
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -312,16 +291,16 @@ export const blogPosts: BlogPost[] = [
     `,
     author: 'Yamuna',
     date: 'January 25, 2026',
-    image: '/img/newproductshots/cloves-cg2-ps2.PNG',
+    image: '/img/newproductshots/cloves-cg2-ps1.PNG',
     tags: ['Wellness', 'Herbal Remedy', 'Spices']
   },
   {
     id: 'decoding-spice-grades',
     slug: 'decoding-spice-grades-c5-h2-g1',
-    title: 'Decoding Spice Grades: What Do C5, H2, and G1 Actually Mean?',
+    title: 'Decoding Spice Grades: What Do C5, H2, and CG 1 Actually Mean?',
     excerpt: 'A connoisseur\'s guide to understanding spice quality labels. Learn to choose the right grade for your culinary needs like a pro.',
     content: `
-      <p class="mb-4">When you buy wine, you check the vintage and region. When you buy coffee, you look for the roast. But when it comes to spices, most of us just grab the jar that says "Cinnamon." At Earthy Munchy, we believe in transparency. We label our products with their specific grades—C5, H2, G1—because these codes tell you exactly what you're eating.</p>
+      <p class="mb-4">When you buy wine, you check the vintage and region. When you buy coffee, you look for the roast. But when it comes to spices, most of us just grab the jar that says "Cinnamon." At Earthy Munchy, we believe in transparency. We label our products with their specific grades—C5, H2, CG 1—because these codes tell you exactly what you're eating.</p>
 
       <div class="bg-brand-cream/30 p-6 rounded-xl my-8 border-l-4 border-brand-moss">
         <h3 class="text-xl font-serif font-bold text-brand-dark mb-4">People Also Ask</h3>
@@ -346,7 +325,7 @@ export const blogPosts: BlogPost[] = [
       <strong>H2 (Hamburg 2):</strong> A slightly thicker quill with a more robust, woody flavor. It holds up beautifully in rich curries, stews, and chai where you want the spice to shine through bold ingredients.</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">Clove Grading</h2>
-      <p class="mb-4"><strong>Grade 1 (Hand Picked):</strong> Large, perfect buds with reddish-brown stems and lighter heads. No debris, no headless stems. <br/>
+      <p class="mb-4"><strong>CG 1 (Hand Picked):</strong> Large, perfect buds with reddish-brown stems and lighter heads. No debris, no headless stems. <br/>
       <strong>CG2 (Cloves Grade 2):</strong> Slightly smaller but still rich in oil. Excellent value for grinding into spice mixes (Masalas).</p>
 
       <h2 class="text-2xl font-serif font-bold text-brand-dark mt-8 mb-4">Why It Matters</h2>
